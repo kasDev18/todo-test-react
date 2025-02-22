@@ -3,17 +3,17 @@
 ## Todo Sample React
 <p align="left">Simple todo web app using react. Completed with the ff:</p>
 <b>Frontend:</b>
-    - List, Table with Pagination.
-    - Components for different use cases.
-    - Material UI for styling
-    - Fetch functionality to interact with the database 
-
+    -List, Table with Pagination.
+    -Components for different use cases.
+    -Material UI for styling
+    -Fetch functionality to interact with the database 
+&nbsp;
 <b>Backend:</b>
-    - Installation of packages to smoothly run the app (express, dotenv, cors, mongoose)
-    - MongoDB with collections
-    - env file for sensitive information
-    - Models and Controllers for Schemas.
-    - CRUD functionality with correct error response.
+    -Installation of packages (express, dotenv, cors, mongoose)
+    -MongoDB with collections
+    -env file for sensitive information
+    -Models and Controllers for Schemas.
+    -CRUD functionality with correct error response.
 
 ## Installation
 1. Clone the repository
