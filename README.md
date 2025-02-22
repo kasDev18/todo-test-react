@@ -4,22 +4,22 @@
 
 <p align="left">Simple todo web app using react. Completed with the ff:</p>
 <b><p>Frontend:</p></b>
-<li>
-    <ul>List, Table with Pagination.</ul>
-    <ul>Components for different use cases.</ul>
-    <ul>Material UI for styling</ul>
-    <ul>Fetch functionality to interact with the database </ul>
-</li>
+<ul>
+    <li>List, Table with Pagination.</li>
+    <li>Components for different use cases.</li>
+    <li>Material UI for styling</li>
+    <li>Fetch functionality to interact with the database </li>
+</ul>
 
 <b><p>Backend:</p></b>
 
-<li>
-    <ul>Installation of packages (express, dotenv, cors, mongoose)</ul>
-    <ul>MongoDB with collections</ul>
-    <ul>env file for sensitive information</ul>
-    <ul>Models and Controllers for Schemas.</ul>
-    <ul>CRUD functionality with correct error response.</ul>
-</li>
+<ul>
+    <li>Installation of packages (express, dotenv, cors, mongoose)</li>
+    <li>MongoDB with collections</li>
+    <li>env file for sensitive information</li>
+    <li>Models and Controllers for Schemas.</li>
+    <li>CRUD functionality with correct error response.</li>
+</ul>
 
 ## Installation
 
