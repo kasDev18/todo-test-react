@@ -1,0 +1,82 @@
+[
+    {
+        "title": "Finish reading the book",
+        "completed": true
+    },
+    {
+        "title": "Buy groceries",
+        "completed": false
+    },
+    {
+        "title": "Write a blog post",
+        "completed": true
+    },
+    {
+        "title": "Clean the house",
+        "completed": false
+    },
+    {
+        "title": "Work out",
+        "completed": true
+    },
+    {
+        "title": "Call the bank",
+        "completed": false
+    },
+    {
+        "title": "Fix the leaking faucet",
+        "completed": true
+    },
+    {
+        "title": "Plan the trip itinerary",
+        "completed": false
+    },
+    {
+        "title": "Attend the meeting",
+        "completed": true
+    },
+    {
+        "title": "Finish the project report",
+        "completed": false
+    },
+    {
+        "title": "Update the software",
+        "completed": true
+    },
+    {
+        "title": "Visit the doctor",
+        "completed": false
+    },
+    {
+        "title": "Organize the desk",
+        "completed": true
+    },
+    {
+        "title": "Cook dinner",
+        "completed": false
+    },
+    {
+        "title": "Reply to emails",
+        "completed": true
+    },
+    {
+        "title": "Finish the presentation",
+        "completed": false
+    },
+    {
+        "title": "Take the car for servicing",
+        "completed": true
+    },
+    {
+        "title": "Pay the bills",
+        "completed": false
+    },
+    {
+        "title": "Research for the article",
+        "completed": true
+    },
+    {
+        "title": "Set up the new computer",
+        "completed": false
+    }
+]
