@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 // import "./App.css"
 
 import Todo from "./components/main_component/Todo";
+import Edit from "./components/main_component/Edit";
 function App() {
   
 
@@ -29,24 +30,19 @@ function App() {
           </Box>
         }
       />
-      {/* <Route
-        path="game_interface"
+      <Route
+        path="/edit/:id"
         element={
-          <Box className="App">
-            <GameInterface
-              title="Pokedex"
-              imageHeading={imageHeading}
-              image={api.pokeImageSrc}
-              gif={api.pokeGIFSrc}
-              name={pokemon.name}
-              types={types}
-              abilities={pokeAbilities}
-              entryDescription={entryDesc}
-              pokeName={pokemon.name}
-            />
+          <Box
+            className="edit"
+            // sx={{
+            //   height: "96vh",
+            // }}
+          >
+            <Edit />
           </Box>
         }
-      /> */}
+      />
     </Routes>
   );
 }
