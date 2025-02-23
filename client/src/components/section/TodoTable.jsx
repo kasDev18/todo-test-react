@@ -19,11 +19,12 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
-import { Link } from '@mui/material'
-;
+import { Link } from '@mui/material';
+
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
+import * as config from '../../../config/app.js';
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -92,10 +93,10 @@ export default function CustomPaginationActionsTable() {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const todos = async () => {
-    const response = await fetch("http://localhost:5000/todos");
-    const data = await response.json();
+    const response = await fetch(`${config.server}/todos`);
+    const res = await response.json();
 
-    setData(data);
+    setData(res);
     
     window.localStorage.removeItem("response");
   }
@@ -114,11 +115,10 @@ export default function CustomPaginationActionsTable() {
   };
 
   const handleClickEdit = async(e) => {
-    const response = await fetch("http://localhost:5000/todos/read/" + e);
+    const response = await fetch(`${config.server}/todos/read/` + e);
     const data = await response.json();
 
     window.localStorage.setItem("response", data.response);
-    // console.log(data);
   }
 
   const handleClickDelete = async(e) => {
@@ -132,15 +132,11 @@ export default function CustomPaginationActionsTable() {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
-      // didOpen: () => {
-      //   // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-      //   MySwal.showLoading()
-      // },
     }).then((result) => {
       if (result.isConfirmed) {
 
         const deleteTodo = async () => {
-          const response = await fetch("http://localhost:5000/todos/delete/" + e, {
+          const response = await fetch(`${config.server}/todos/delete/` + e, {
             method: "DELETE",
           });
           const data = await response.json();
@@ -153,26 +149,6 @@ export default function CustomPaginationActionsTable() {
         deleteTodo();
       }
     })
-
-
-    // Swal.fire({
-    //   title: "Are you sure?",
-    //   text: "You won't be able to revert this!",
-    //   icon: "warning",
-    //   showCancelButton: true,
-    //   confirmButtonColor: "#3085d6",
-    //   cancelButtonColor: "#d33",
-    //   confirmButtonText: "Yes, delete it!"
-    // }).then((result) => {
-    //   if (result.isConfirmed) {
-    //     Swal.fire({
-    //       title: "Deleted!",
-    //       text: "Your file has been deleted.",
-    //       icon: "success"
-    //     });
-    //   }
-    // });
-
   }
 
   React.useEffect(() => {
@@ -184,7 +160,6 @@ export default function CustomPaginationActionsTable() {
       <Table aria-label="custom pagination table">
       <TableHead>
           <TableRow >
-            {/* <TableCell align="left">ID</TableCell> */}
             <TableCell align="left"><b>Title</b></TableCell>
             <TableCell align="right"></TableCell>
           </TableRow>
@@ -195,9 +170,6 @@ export default function CustomPaginationActionsTable() {
             : data
           ).map((row, index) => (
             <TableRow key={index}>
-              {/* <TableCell component="th" scope="row" align="left">
-                {index + 1}
-              </TableCell> */}
               <TableCell style={{ width: 160 }} align="left">
                 {row.title}
               </TableCell>
