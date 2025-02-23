@@ -5,8 +5,9 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 
-import Create from "../section/Create";
 import TodoTable from "../section/TodoTable";
+
+import * as  config from "../../../config/app.js";
 
 export default function Todo() {
   const [openflash, setOpenFlash] = useState(false);
@@ -18,7 +19,7 @@ export default function Todo() {
   };
 
   const handleClick = async () => {
-    const response = await fetch("http://localhost:5000/todos/create", {
+    const response = await fetch(`${config.server}/todos/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,15 +31,8 @@ export default function Todo() {
 
     const data = await response.json();
     window.localStorage.setItem("response", data.response);
-      window.location.reload();
-
-    // console.log(data);
-  
-    // alert(todo);
+    window.location.reload();
   };
-
-
-  // console.log(openflash);
   
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {

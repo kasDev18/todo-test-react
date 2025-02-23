@@ -35,9 +35,6 @@ function App() {
         element={
           <Box
             className="edit"
-            // sx={{
-            //   height: "96vh",
-            // }}
           >
             <Edit />
           </Box>

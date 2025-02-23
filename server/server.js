@@ -4,11 +4,8 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 
-import authRoutes from "./routes/auth.routes.js";
 import todoRoutes from "./routes/todos.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
-
-import Todo from "./models/todos.model.js";
 
 dotenv.config();
 

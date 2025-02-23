@@ -7,8 +7,10 @@ import {
   Snackbar,
 } from "@mui/material";
 
-import { useState, useEffect, use } from "react";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+
+import * as  config from "../../../config/app.js";
 
 export default function Edit() {
   const [todo, setTodo] = useState("");
@@ -17,12 +19,9 @@ export default function Edit() {
   const navigate = useNavigate();
 
   const readTodo = async () => {
-    const response = await fetch(`http://localhost:5000/todos/read/${id}`);
-
+    const response = await fetch(`${config.server}/todos/read/${id}`);
     const data = await response.json();
     setTodo(data.title);
-    // console.log(data);
-    
   }
 
   const handleChange = (event) => {
@@ -30,7 +29,7 @@ export default function Edit() {
   }
 
   const updateTodo = async () => {
-    const response = await fetch(`http://localhost:5000/todos/edit/`, {
+    const response = await fetch(`${config.server}/todos/edit/`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -45,17 +44,13 @@ export default function Edit() {
 
     window.localStorage.setItem("response", data.response);
     navigate("/");
-    // console.log(data);
   };
 
   // console.log(todo);
   
-  const handleClick = (event) => {
-    event.preventDefault();
+  const handleClick = () => {
     updateTodo();
   }
-  // console.log(id);
-  
 
   useEffect(() => {
     readTodo();
